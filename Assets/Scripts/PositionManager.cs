@@ -10,15 +10,13 @@ public class PositionManager : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-    
-       
-        setStack();
+        prepareArray();
         /*for (int i = 0; i < cameras.Length; i++) {
             StartCoroutine(MoveCamera(i));
         }*/
     }
 
-    void setStack() {
+    void prepareArray() {
         int[] randomPositions  = pseudoRandomNumberGenerator();
         //Debug.Log(randomPositions);
         positionPool = new Transform[cameras.Length];

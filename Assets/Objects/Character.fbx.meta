@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 7f7a232e0c919e04fb80be214ad4c1aa
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: geo_cabeza
+    100004: geo_cuello
+    100006: geo_LT_brazo
+    100008: geo_LT_pie
+    100010: geo_RT_brazo
+    100012: geo_RT_pie
+    100014: geo_torso
+    100016: loc_cabeza
+    100018: loc_LT_brazo
+    100020: loc_LT_pie
+    100022: loc_RT_brazo
+    100024: loc_RT_pie
+    100026: loc_torso
+    100028: LT_brazo_control
+    100030: LT_brazo_null
+    100032: LT_pie_control
+    100034: LT_pie_null
+    100036: Master_control
+    100038: Master_null
+    100040: pCube8
+    100042: RT_brazo_control
+    100044: RT_brazo_null
+    100046: RT_pie_control
+    100048: RT_pie_null
+    100050: T_brazo_control
+    100052: Torso_control
+    100054: Torso_null
+    100056: transform8
+    400000: //RootNode
+    400002: geo_cabeza
+    400004: geo_cuello
+    400006: geo_LT_brazo
+    400008: geo_LT_pie
+    400010: geo_RT_brazo
+    400012: geo_RT_pie
+    400014: geo_torso
+    400016: loc_cabeza
+    400018: loc_LT_brazo
+    400020: loc_LT_pie
+    400022: loc_RT_brazo
+    400024: loc_RT_pie
+    400026: loc_torso
+    400028: LT_brazo_control
+    400030: LT_brazo_null
+    400032: LT_pie_control
+    400034: LT_pie_null
+    400036: Master_control
+    400038: Master_null
+    400040: pCube8
+    400042: RT_brazo_control
+    400044: RT_brazo_null
+    400046: RT_pie_control
+    400048: RT_pie_null
+    400050: T_brazo_control
+    400052: Torso_control
+    400054: Torso_null
+    400056: transform8
+    2300000: geo_cabeza
+    2300002: geo_cuello
+    2300004: geo_LT_brazo
+    2300006: geo_LT_pie
+    2300008: geo_RT_brazo
+    2300010: geo_RT_pie
+    2300012: geo_torso
+    3300000: geo_cabeza
+    3300002: geo_cuello
+    3300004: geo_LT_brazo
+    3300006: geo_LT_pie
+    3300008: geo_RT_brazo
+    3300010: geo_RT_pie
+    3300012: geo_torso
+    4300000: geo_torso
+    4300002: geo_cuello
+    4300004: geo_RT_brazo
+    4300006: geo_LT_brazo
+    4300008: geo_cabeza
+    4300010: geo_LT_pie
+    4300012: geo_RT_pie
+    7400000: idle
+    7400002: jump
+    7400004: run
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Master_null
+        weight: 1
+      - path: Master_null/Master_control
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control/loc_LT_pie
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control/loc_LT_pie/geo_LT_pie
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control/loc_RT_pie
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control/loc_RT_pie/geo_RT_pie
+        weight: 1
+      - path: Master_null/Master_control/Torso_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso/geo_torso
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso/geo_torso/geo_cuello
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control/loc_LT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control/loc_LT_brazo/geo_LT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control/loc_RT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control/loc_RT_brazo/geo_RT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control/loc_cabeza
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control/loc_cabeza/geo_cabeza
+        weight: 1
+      - path: pCube8
+        weight: 1
+      - path: pCube8/transform8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 12
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Master_null
+        weight: 1
+      - path: Master_null/Master_control
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control/loc_LT_pie
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control/loc_LT_pie/geo_LT_pie
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control/loc_RT_pie
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control/loc_RT_pie/geo_RT_pie
+        weight: 1
+      - path: Master_null/Master_control/Torso_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso/geo_torso
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso/geo_torso/geo_cuello
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control/loc_LT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control/loc_LT_brazo/geo_LT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control/loc_RT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control/loc_RT_brazo/geo_RT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control/loc_cabeza
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control/loc_cabeza/geo_cabeza
+        weight: 1
+      - path: pCube8
+        weight: 1
+      - path: pCube8/transform8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 69
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Master_null
+        weight: 1
+      - path: Master_null/Master_control
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control/loc_LT_pie
+        weight: 1
+      - path: Master_null/Master_control/LT_pie_null/LT_pie_control/loc_LT_pie/geo_LT_pie
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control/loc_RT_pie
+        weight: 1
+      - path: Master_null/Master_control/RT_pie_null/RT_pie_control/loc_RT_pie/geo_RT_pie
+        weight: 1
+      - path: Master_null/Master_control/Torso_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso/geo_torso
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/loc_torso/geo_torso/geo_cuello
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control/loc_LT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/LT_brazo_null/LT_brazo_control/loc_LT_brazo/geo_LT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control/loc_RT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/RT_brazo_null/RT_brazo_control/loc_RT_brazo/geo_RT_brazo
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control/loc_cabeza
+        weight: 1
+      - path: Master_null/Master_control/Torso_null/Torso_control/T_brazo_control/loc_cabeza/geo_cabeza
+        weight: 1
+      - path: pCube8
+        weight: 1
+      - path: pCube8/transform8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
