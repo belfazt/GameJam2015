@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
     public float speed;
     public float jumpForce;
+    public int lives;
     private bool ableToJump;
     private bool grounded;
 	// Use this for initialization
@@ -36,6 +37,10 @@ public class PlayerController : MonoBehaviour {
     IEnumerator TouchGround(float secs) {
         yield return new WaitForSeconds(secs);
         this.ableToJump = true;
+    }
+
+    public int getLives() {
+        return this.lives;
     }
 
     void OnCollisionEnter(Collision c) {
