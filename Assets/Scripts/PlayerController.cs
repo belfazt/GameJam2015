@@ -13,8 +13,9 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
         transform.Translate(new Vector3(/*Input.GetAxis("Horizontal")*/1, 0, 0) * Time.deltaTime * speed, Space.World);
+		transform.Translate(0.10F, 0, 0 * Time.deltaTime);
 
         if(Input.GetButtonDown("Jump") && ableToJump && grounded){
             rigidbody.AddForce(new Vector3(0, jumpForce, 0));
@@ -22,8 +23,16 @@ public class PlayerController : MonoBehaviour {
             grounded = false;
             StartCoroutine(TouchGround(1.5f));
         }
+
 	}
 
+	void OnTriggerEnter(Collider other)
+	{
+
+		if(other.gameObject.tag == "Trigger"){
+			Destroy(gameObject);
+		} 
+	}
     IEnumerator TouchGround(float secs) {
         yield return new WaitForSeconds(secs);
         this.ableToJump = true;
