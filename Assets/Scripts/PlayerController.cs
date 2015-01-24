@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(new Vector3(Input.GetAxis("Horizontal"), 0, 0) * Time.deltaTime * speed, Space.World);
+        transform.Translate(new Vector3(/*Input.GetAxis("Horizontal")*/1, 0, 0) * Time.deltaTime * speed, Space.World);
 
         if(Input.GetButtonDown("Jump") && ableToJump && grounded){
             rigidbody.AddForce(new Vector3(0, jumpForce, 0));
