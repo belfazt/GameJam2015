@@ -7,10 +7,12 @@ public class GUIBehaviour : MonoBehaviour {
     public GUISkin skin;
     private GameObject player;
     private int timer;
+    private bool verifSecs;
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Player");
         timer = 0;
+        this.verifSecs = true;
         StartCoroutine(Timer());
 	}
 
@@ -37,9 +39,13 @@ public class GUIBehaviour : MonoBehaviour {
         try{
             GUI.Label(new Rect(0, 0, Screen.width / 4, Screen.height / 10), "Lives Remaining: " + Information.lives, myGUI);
             GUI.Label(new Rect(0, Screen.height / 10, Screen.width / 4, Screen.height / 10), "Time playing like\n a n00b: " + timer, myGUI);
-            if (player.GetComponent<PlayerController>().getSecondsToStart() > 0)
+            if (this.verifSecs && player.GetComponent<PlayerController>().getSecondsToStart() > 0)
             {
                 GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 300, 200, 600), "" + player.GetComponent<PlayerController>().getSecondsToStart(), bigLetters);
+
+            }
+            else {
+                this.verifSecs = false;
             }
         }
         catch (MissingReferenceException e){
