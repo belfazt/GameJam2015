@@ -12,8 +12,11 @@ public class PlayerController : MonoBehaviour {
 	public float score=0;
     private bool jumped;
     private ParticleController particleC;
+	private Particle crush;
+	public GameObject death;
 	// Use this for initialization
 	void Start () {
+
         this.ableToJump = true;
         this.grounded = false;
         this.paused = false;
@@ -21,6 +24,7 @@ public class PlayerController : MonoBehaviour {
         this.speed = 0;
         this.particleC = GameObject.Find("caer").GetComponent<ParticleController>();
         StartCoroutine(Countdown());
+
 	}
 	
 	// Update is called once per frame
@@ -58,10 +62,19 @@ public class PlayerController : MonoBehaviour {
 	{
 
 		if(other.gameObject.tag == "Trigger"){
+
             this.lives--;
+			Instantiate(death,transform.position,Quaternion.identity);
             Destroy(gameObject);
+
+
+
+
+
 		} 
 	}
+
+
     IEnumerator TouchGround(float secs) {
         yield return new WaitForSeconds(secs);
         this.ableToJump = true;
@@ -106,11 +119,7 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("gotta catch'em all");
         }
     }
-    void OnCollisionStay(Collision c) {
-		
-
-    }
-
+  
     void OnCollisionExit(Collision c) {
         if (c.transform.tag.Equals("Platform")) {
             jumped = true;
