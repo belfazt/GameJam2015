@@ -16,10 +16,15 @@ public class GUIBehaviour : MonoBehaviour {
 
     IEnumerator Timer() {
         while (true) {
-            if (player.GetComponent<PlayerController>().getSecondsToStart() <= 0){
-                timer += (1 * (int)Time.timeScale);
+            try{
+                if (player.GetComponent<PlayerController>().getSecondsToStart() <= 0){
+                    timer += (1 * (int)Time.timeScale);
+                }
             }
-            
+            catch (MissingReferenceException e){
+                Debug.Log(e);
+                break;
+            }
             yield return new WaitForSeconds(1);
         }
     }
