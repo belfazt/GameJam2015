@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour {
             if(!grounded && jumped){
                 try
                 {
-                    particleC.particlesPlay(0.7f);
+                  //  particleC.particlesPlay(0.7f);
                 }
                 catch (MissingReferenceException e)
                 {
