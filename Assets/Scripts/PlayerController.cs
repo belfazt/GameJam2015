@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     private ParticleController particleC;
 	private Particle crush;
 	public GameObject death;
+	public GameObject jump;
 	// Use this for initialization
 	void Start () {
 
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour {
         this.paused = false;
         this.secondsToStart = 6;
         this.speed = 0;
-        this.particleC = GameObject.Find("caer").GetComponent<ParticleController>();
+       
         StartCoroutine(Countdown());
 
 	}
@@ -41,10 +42,13 @@ public class PlayerController : MonoBehaviour {
     {       
         if (Input.GetButtonDown("Jump") && ableToJump && grounded)
         {
+			print ("salto");
+			Instantiate(jump,transform.position,Quaternion.identity);
             rigidbody.velocity = new Vector3(0, jumpForce, 0);
             ableToJump = false;
             grounded = false;
-            StartCoroutine(TouchGround(1.5f));
+            StartCoroutine(TouchGround(0.5f));
+
         }
 
     }
