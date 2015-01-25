@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour {
         this.paused = false;
         this.secondsToStart = 6;
         this.speed = 0;
-        //this.particleC = GameObject.Find("caer").GetComponent<ParticleController>();
         lvlChg = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
         StartCoroutine(Countdown());
 
