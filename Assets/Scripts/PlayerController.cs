@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
     private bool paused;
     private int secondsToStart;
 	public float score=0;
+    private bool jumped;
+    private ParticleController particleC;
 	// Use this for initialization
 	void Start () {
         this.ableToJump = true;
@@ -17,22 +19,13 @@ public class PlayerController : MonoBehaviour {
         this.paused = false;
         this.secondsToStart = 6;
         this.speed = 0;
+        this.particleC = GameObject.Find("caer").GetComponent<ParticleController>();
         StartCoroutine(Countdown());
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () {
         transform.Translate(new Vector3(/*Input.GetAxis("Horizontal")*/1, 0, 0) * Time.deltaTime  * speed, Space.World);
-
-
-       
-
-       /*if(Input.GetButtonDown("Jump") && ableToJump && grounded){
-            rigidbody.AddForce(new Vector3(0, jumpForce, 0));
-            ableToJump = false;
-            grounded = false;
-            StartCoroutine(TouchGround(1.5f));
-        }*/
 
         if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.Escape)){
             Debug.Log("Hello");
@@ -44,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     {       
         if (Input.GetButtonDown("Jump") && ableToJump && grounded)
         {
-            rigidbody.velocity = new Vector3(0, 8, 0);
+            rigidbody.velocity = new Vector3(0, jumpForce, 0);
             ableToJump = false;
             grounded = false;
             StartCoroutine(TouchGround(1.5f));
@@ -88,23 +81,40 @@ public class PlayerController : MonoBehaviour {
     public int getSecondsToStart() {
         return this.secondsToStart;
     }
-    void OnCollisionEnter(Collision c)
-    {
-        if (c.transform.tag.Equals("Platform"))
-        {
+    void OnCollisionEnter(Collision c){
+        if (c.transform.tag.Equals("Platform")){
+            if(!grounded && jumped){
+                try
+                {
+                    particleC.particlesPlay(0.7f);
+                }
+                catch (MissingReferenceException e)
+                {
+
+                    //Debug.Log(e);
+                }
+                
+            } 
             grounded = true;
+            jumped = false;
+              
         }
-        if (c.gameObject.tag == "orb")
-        {
-            print("gotta go fast");
+        if (c.gameObject.tag == "orb"){
+            Debug.Log("gotta go fast");
         }
-        if (c.gameObject.tag == "puntos")
-        {
-            print("gotta catch'em all");
+        if (c.gameObject.tag == "puntos"){
+            Debug.Log("gotta catch'em all");
         }
     }
     void OnCollisionStay(Collision c) {
 		
 
+    }
+
+    void OnCollisionExit(Collision c) {
+        if (c.transform.tag.Equals("Platform")) {
+            jumped = true;
+        }
+        
     }
 }

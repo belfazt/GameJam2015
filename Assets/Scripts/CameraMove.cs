@@ -39,7 +39,7 @@ public class CameraMove : MonoBehaviour {
 
     void PositionChanging() {
         
-        Debug.Log(movement);
+        //Debug.Log(movement);
         transform.position = Vector3.Lerp(transform.position, movement, smooth * Time.deltaTime);
         
     }

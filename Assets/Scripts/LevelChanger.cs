@@ -24,4 +24,12 @@ public class LevelChanger : MonoBehaviour {
             Application.LoadLevel(Application.loadedLevel+1);
         }
     }
+
+    public void MenuClick() {
+        Application.LoadLevel(Application.loadedLevel+1);
+    }
+
+    public void OpenCredits() {
+        Application.OpenURL("http://globalgamejam.org/2015/games/pixel-paradox");
+    }
 }
