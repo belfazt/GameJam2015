@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
     {       
         if (Input.GetButtonDown("Jump") && ableToJump && grounded)
         {
-            rigidbody.velocity = new Vector3(0, 10, 0);
+            rigidbody.velocity = new Vector3(0, 8, 0);
             ableToJump = false;
             grounded = false;
             StartCoroutine(TouchGround(1.5f));
