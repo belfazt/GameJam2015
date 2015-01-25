@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	private Particle crush;
 	public GameObject death;
     private LevelChanger lvlChg;
+	public GameObject jump;
 	// Use this for initialization
 	void Start () {
         this.ableToJump = true;
@@ -42,10 +43,13 @@ public class PlayerController : MonoBehaviour {
     {       
         if (Input.GetButtonDown("Jump") && ableToJump && grounded)
         {
+			print ("salto");
+			Instantiate(jump,transform.position,Quaternion.identity);
             rigidbody.velocity = new Vector3(0, jumpForce, 0);
             ableToJump = false;
             grounded = false;
-            StartCoroutine(TouchGround(1.5f));
+            StartCoroutine(TouchGround(0.5f));
+
         }
 
     }
