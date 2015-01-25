@@ -4,37 +4,38 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
     private float speed;
     public float jumpForce;
-    public int lives;
+    
     private bool ableToJump;
     private bool grounded;
     private bool paused;
     private int secondsToStart;
 	public float score=0;
     private bool jumped;
-    private ParticleController particleC;
+    //private ParticleController particleC;
 	private Particle crush;
 	public GameObject death;
+    private LevelChanger lvlChg;
 	// Use this for initialization
 	void Start () {
-
         this.ableToJump = true;
         this.grounded = false;
         this.paused = false;
         this.secondsToStart = 6;
         this.speed = 0;
-        this.particleC = GameObject.Find("caer").GetComponent<ParticleController>();
+        //this.particleC = GameObject.Find("caer").GetComponent<ParticleController>();
+        lvlChg = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
         StartCoroutine(Countdown());
 
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        transform.Translate(new Vector3(/*Input.GetAxis("Horizontal")*/1, 0, 0) * Time.deltaTime  * speed, Space.World);
-
+        transform.Translate(new Vector3((1 + Input.GetAxis("Horizontal")/2), 0, 0) * Time.deltaTime * speed, Space.World);
         if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.Escape)){
             Debug.Log("Hello");
             Pause();
         }
+        
 
 	}
     void FixedUpdate()
@@ -63,17 +64,17 @@ public class PlayerController : MonoBehaviour {
 
 		if(other.gameObject.tag == "Trigger"){
 
-            this.lives--;
 			Instantiate(death,transform.position,Quaternion.identity);
+            Information.lives--;
+            lvlChg.ReloadLvl();
             Destroy(gameObject);
-
-
-
 
 
 		} 
 	}
 
+
+    
 
     IEnumerator TouchGround(float secs) {
         yield return new WaitForSeconds(secs);
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public int getLives() {
-        return this.lives;
+        return Information.lives;
     }
 
     public int getSecondsToStart() {

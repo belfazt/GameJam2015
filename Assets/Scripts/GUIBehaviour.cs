@@ -35,7 +35,7 @@ public class GUIBehaviour : MonoBehaviour {
 
     void OnGUI() {
         try{
-            GUI.Label(new Rect(0, 0, Screen.width / 4, Screen.height / 10), "Lives Remaining: " + player.GetComponent<PlayerController>().getLives(), myGUI);
+            GUI.Label(new Rect(0, 0, Screen.width / 4, Screen.height / 10), "Lives Remaining: " + Information.lives, myGUI);
             GUI.Label(new Rect(0, Screen.height / 10, Screen.width / 4, Screen.height / 10), "Time playing like\n a n00b: " + timer, myGUI);
             if (player.GetComponent<PlayerController>().getSecondsToStart() > 0)
             {

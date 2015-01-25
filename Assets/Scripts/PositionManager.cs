@@ -7,13 +7,9 @@ public class PositionManager : MonoBehaviour {
     public GameObject[] cameras;
     public float smooth;
     private Transform[] positionPool;
-    
 	// Use this for initialization
 	void Start () {
-        prepareArray();
-        /*for (int i = 0; i < cameras.Length; i++) {
-            StartCoroutine(MoveCamera(i));
-        }*/
+        prepareArray();   
     }
 
     void prepareArray() {

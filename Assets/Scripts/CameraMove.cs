@@ -21,7 +21,7 @@ public class CameraMove : MonoBehaviour {
                 break;
             }
             Debug.Log(movement);
-            //StopCoroutine(GetMovement());
+            //StopCoroutine(GetMovement()); 
         }
     }
 	// Use this for initialization
