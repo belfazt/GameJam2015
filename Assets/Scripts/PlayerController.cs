@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     private bool grounded;
     private bool paused;
     private int secondsToStart;
+   
 	// Use this for initialization
 	void Start () {
         this.ableToJump = true;
@@ -23,12 +24,17 @@ public class PlayerController : MonoBehaviour {
 	void LateUpdate () {
         transform.Translate(new Vector3(/*Input.GetAxis("Horizontal")*/1, 0, 0) * Time.deltaTime  * speed, Space.World);
 
-        if(Input.GetButtonDown("Jump") && ableToJump && grounded){
+
+        if (Input.GetKey(KeyCode.Space) && grounded)
+        {
+            rigidbody.AddForce(Vector3.up * jumpForce);
+        }
+        /*if(Input.GetButtonDown("Jump") && ableToJump && grounded){
             rigidbody.AddForce(new Vector3(0, jumpForce, 0));
             ableToJump = false;
             grounded = false;
             StartCoroutine(TouchGround(1.5f));
-        }
+        }*/
         else if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.Escape)){
             Debug.Log("Hello");
             Pause();
@@ -78,6 +84,20 @@ public class PlayerController : MonoBehaviour {
         if (c.transform.tag.Equals("Platform")) {
             
             this.grounded = true;
+        }
+    }
+    void OnCollisionStay(Collision col)
+    {
+        if (col.gameObject.name == "pb-Cube-3698100")
+        {
+            grounded = true;
+        }
+    }
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.name == "pb-Cube-3698100")
+        {
+            grounded = false;
         }
     }
 }
