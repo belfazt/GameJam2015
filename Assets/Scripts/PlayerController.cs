@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     private bool grounded;
     private bool paused;
     private int secondsToStart;
+	public float score=0;
 	// Use this for initialization
 	void Start () {
         this.ableToJump = true;
@@ -78,6 +79,22 @@ public class PlayerController : MonoBehaviour {
         if (c.transform.tag.Equals("Platform")) {
             
             this.grounded = true;
+			
+
         }
+		
+		if (c.transform.tag.Equals ("bola")) 
+		{
+			score = score + 1;
+			Debug.Log (score);
+
+		}
+		
+		if (c.transform.tag.Equals ("plane")) 
+		{
+			Debug.Log ("ganaste");
+
+				
+		}
     }
 }
