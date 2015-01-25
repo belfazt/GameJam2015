@@ -2,15 +2,17 @@
 using System.Collections;
 
 public class LevelChanger : MonoBehaviour {
-
+	public AudioClip ClicSound;
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Nivel Actual " +Application.loadedLevelName+", "+ Application.loadedLevel);
+        Debug.Log("Nivel Actual " + Application.loadedLevelName + ", " + Application.loadedLevel);
         Debug.Log("Nivel Siguiente: " + (Application.loadedLevel + 1 % Application.levelCount));
-        if (Information.lives < 0){
+        if (Information.lives < 0)
+        {
             Application.LoadLevel(0);
         }
-        if (Application.loadedLevel == 0) {
+        if (Application.loadedLevel == 0)
+        {
             Information.lives = 5;
         }
 	}
@@ -22,32 +24,34 @@ public class LevelChanger : MonoBehaviour {
 
     void OnCollisionEnter(Collision c) {
         if (c.transform.name.Equals("Player")) {
-            Application.LoadLevel(Application.loadedLevel + 1 % Application.levelCount);
+			Debug.Log (Application.loadedLevelName);
+			AudioSource.PlayClipAtPoint(ClicSound, transform.position);
+			Application.LoadLevel(Application.loadedLevel+1);
         }
     }
 
     void OnTriggerEnter(Collider c) {
         if (c.transform.name.Equals("Player")) {
-            Debug.Log(Application.loadedLevelName);
-
-            Application.LoadLevel(Application.loadedLevel + 1 % Application.levelCount);
+			AudioSource.PlayClipAtPoint(ClicSound, transform.position);
+            Application.LoadLevel(Application.loadedLevel+1);
         }
     }
 
     public void MenuClick() {
-        Application.LoadLevel(Application.loadedLevel + 1 % Application.levelCount);
+		AudioSource.PlayClipAtPoint(ClicSound, transform.position);
+        Application.LoadLevel(Application.loadedLevel+1);
     }
 
     public void OpenCredits() {
+		AudioSource.PlayClipAtPoint(ClicSound, transform.position);
         Application.OpenURL("http://globalgamejam.org/2015/games/pixel-paradox");
     }
-
-    public void ReloadLvl() {
+    public void ReloadLvl()
+    {
         StartCoroutine(ReloadLevel());
     }
-    
-    IEnumerator ReloadLevel()
-    {
+
+    IEnumerator ReloadLevel(){
         yield return new WaitForSeconds(3);
         Application.LoadLevel(Application.loadedLevel);
     }
