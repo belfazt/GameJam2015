@@ -9,10 +9,11 @@ public class PlayerController : MonoBehaviour {
     private bool grounded;
     private bool paused;
     private int secondsToStart;
+	public float score=0;
 	// Use this for initialization
 	void Start () {
         this.ableToJump = true;
-        this.grounded = true;
+        this.grounded = false;
         this.paused = false;
         this.secondsToStart = 6;
         this.speed = 0;
@@ -23,19 +24,33 @@ public class PlayerController : MonoBehaviour {
 	void LateUpdate () {
         transform.Translate(new Vector3(/*Input.GetAxis("Horizontal")*/1, 0, 0) * Time.deltaTime  * speed, Space.World);
 
-        if(Input.GetButtonDown("Jump") && ableToJump && grounded){
+
+       
+
+       /*if(Input.GetButtonDown("Jump") && ableToJump && grounded){
             rigidbody.AddForce(new Vector3(0, jumpForce, 0));
             ableToJump = false;
             grounded = false;
             StartCoroutine(TouchGround(1.5f));
-        }
-        else if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.Escape)){
+        }*/
+
+        if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.Escape)){
             Debug.Log("Hello");
             Pause();
         }
 
 	}
+    void FixedUpdate()
+    {       
+        if (Input.GetButtonDown("Jump") && ableToJump && grounded)
+        {
+            rigidbody.velocity = new Vector3(0, 10, 0);
+            ableToJump = false;
+            grounded = false;
+            StartCoroutine(TouchGround(1.5f));
+        }
 
+    }
     void Pause() { 
         this.paused = !this.paused;
         if(paused){
@@ -73,11 +88,23 @@ public class PlayerController : MonoBehaviour {
     public int getSecondsToStart() {
         return this.secondsToStart;
     }
-
-    void OnCollisionEnter(Collision c) {
-        if (c.transform.tag.Equals("Platform")) {
-            
-            this.grounded = true;
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.transform.tag.Equals("Platform"))
+        {
+            grounded = true;
         }
+        if (c.gameObject.tag == "orb")
+        {
+            print("gotta go fast");
+        }
+        if (c.gameObject.tag == "puntos")
+        {
+            print("gotta catch'em all");
+        }
+    }
+    void OnCollisionStay(Collision c) {
+		
+
     }
 }
